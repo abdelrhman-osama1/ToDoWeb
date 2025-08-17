@@ -1,0 +1,130 @@
+
+body {
+    font-family: 'work-sans', sans-serif ,'open sans';
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    justify-content: center;
+    padding-top: 100px;
+    background:#f4f4f4;
+}
+
+.container{
+
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 0,0.1);
+    width: 300px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    border-radius: 5px;
+    border-width: 1px;
+    padding-left: 10px;
+    height: 30px;
+}
+.form input:hover{
+    box-shadow: 0 0 10px rgb(0, 0,0.1);
+}
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    align-self: self-end;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+#taskList{
+    padding: 0;
+    list-style: none;
+}
+button:hover{
+    background: #218838;
+}
+.DeleteBtn{
+    margin: 10px;
+    width: 60px;
+}
+#taskList li{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    cursor:context-menu ;
+    line-height: 1.4;
+    overflow: auto;
+
+}
+#taskList li::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+#taskList li::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #888, #555);
+    border-radius: 4px;
+}
+#taskList li::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(180deg,#666, #444);
+}
+.task-left{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
+}
+.checkbox{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    border: solid 1px black;
+    background-color: white;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.checkbox:checked {
+    background-color: black;
+    border-color: black;
+    transition: .3s ease-in-out;
+}
+.checkbox:checked::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+}
+.checkbox:checked::after{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid  #f7f7f7;
+    border-left: 2px solid  #f7f7f7;
+    height: 7px;
+    left: 52%;
+    top: 40%;
+    transform: translate(-50%, -50%) rotate(-46deg);
+    width: 14px;
+}
+.completed-text{
+    text-decoration: line-through;
+    color: gray;
+}
